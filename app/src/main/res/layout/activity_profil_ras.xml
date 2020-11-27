@@ -15,17 +15,17 @@
         android:id="@+id/txJudul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ras Anjing"
+        android:text="Buah Tropis"
         android:textColor="@color/purple_500"
         android:textSize="19sp"
         android:layout_marginBottom="24dp"
         />
 
     <ImageView
-        android:id="@+id/gambarHewan"
+        android:id="@+id/gambarBuah"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:src="@drawable/dog_kintamani"
+        android:src="@drawable/hijau_1"
         android:scaleType="fitCenter"
         android:layout_marginBottom="16dp"
         />
@@ -39,16 +39,17 @@
             android:id="@+id/txJenis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jenis Hewan"
+            android:text="Warna buah"
             android:layout_marginRight="10px"
             android:textColor="@color/purple_500"
             android:textSize="17sp"
             />
         <TextView
-            android:id="@+id/txRas"
+            android:id="@+id/txNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ras"
+            android:text="Nama Buah"
+            android:layout_marginRight="10px"
             android:textColor="@color/purple_500"
             android:textSize="17sp"
             />
@@ -59,7 +60,7 @@
         android:layout_height="wrap_content"
         android:textStyle="italic"
         android:textColor="@color/black"
-        android:text="Asal" />
+        android:text="Indonesia" />
     <TextView
         android:id="@+id/txDeskripsi"
         android:layout_marginTop="8dp"
@@ -67,7 +68,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/black"
-        android:text="Deskripsi hewan" />
+        android:text="Deskripsi pakaian" />
 
     <LinearLayout
         android:layout_marginTop="24dp"

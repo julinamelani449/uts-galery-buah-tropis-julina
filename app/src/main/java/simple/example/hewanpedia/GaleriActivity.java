@@ -12,23 +12,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
-import simple.example.hewanpedia.model.Hewan;
+import simple.example.hewanpedia.model.Galery;
 
 public class GaleriActivity extends AppCompatActivity {
 
-    List<Hewan> hewans;
+    List<Galery> galeries;
     int indeksTampil = 0;
-    String jenisHewan;
+    String jenisBuah;
     Button btnPertama,btnTerakhir,btnSebelumnya,btnBerikutnya;
-    TextView txJenis,txRas,txAsal,txDeskripsi,txJudul;
-    ImageView ivFotoHewan;
+    TextView txJenis,txNama,txAsal,txDeskripsi,txJudul;
+    ImageView ivFotoBuah;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil_ras);
         Intent intent = getIntent();
-        jenisHewan = intent.getStringExtra(MainActivity.JENIS_GALERI_KEY);
-        hewans = DataProvider.getHewansByTipe(this,jenisHewan);
+        jenisBuah = intent.getStringExtra(MainActivity.JENIS_GALERI_KEY);
+        galeries = DataProvider.getBuahsByTipe(this,jenisBuah);
         inisialisasiView();
         tampilkanProfil();
     }
@@ -45,24 +45,24 @@ public class GaleriActivity extends AppCompatActivity {
         btnBerikutnya.setOnClickListener(view -> hewanBerikutnya());
 
         txJenis = findViewById(R.id.txJenis);
-        txRas = findViewById(R.id.txRas);
+        txNama = findViewById(R.id.txNama);
         txAsal = findViewById(R.id.txAsal);
         txDeskripsi = findViewById(R.id.txDeskripsi);
-        ivFotoHewan = findViewById(R.id.gambarHewan);
+        ivFotoBuah = findViewById(R.id.gambarBuah);
 
         txJudul = findViewById(R.id.txJudul);
-        txJudul.setText("Berbagai Macam Ras "+jenisHewan);
+        txJudul.setText("Berbagai Macam "+jenisBuah);
     }
 
 
     private void tampilkanProfil() {
-        Hewan k = hewans.get(indeksTampil);
-        Log.d("ANJING","Menampilkan anjing "+k.getJenis());
+        Galery k = galeries.get(indeksTampil);
+        Log.d("BUAH","Menampilkan buah "+k.getJenis());
         txJenis.setText(k.getJenis());
-        txRas.setText(k.getRas());
+        txNama.setText(k.getNama());
         txAsal.setText(k.getAsal());
         txDeskripsi.setText(k.getDeskripsi());
-        ivFotoHewan.setImageDrawable(this.getDrawable(k.getDrawableRes()));
+        ivFotoBuah.setImageDrawable(this.getDrawable(k.getDrawableRes()));
     }
 
     private void hewanPertama() {
@@ -77,7 +77,7 @@ public class GaleriActivity extends AppCompatActivity {
     }
 
     private void hewanTerakhir() {
-        int posAkhir = hewans.size() - 1;
+        int posAkhir = galeries.size() - 1;
         if (indeksTampil == posAkhir) {
             Toast.makeText(this,"Sudah di posisi terakhir",Toast.LENGTH_SHORT).show();
             return;
@@ -88,7 +88,7 @@ public class GaleriActivity extends AppCompatActivity {
     }
 
     private void hewanBerikutnya() {
-        if (indeksTampil == hewans.size() - 1) {
+        if (indeksTampil == galeries.size() - 1) {
             Toast.makeText(this,"Sudah di posisi terakhir",Toast.LENGTH_SHORT).show();
             return;
         } else {

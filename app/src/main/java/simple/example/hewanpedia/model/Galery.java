@@ -1,15 +1,15 @@
 package simple.example.hewanpedia.model;
 
-public class Hewan {
+public class Galery {
     private String jenis;
-    private String ras;
+    private String nama;
     private String asal;
     private String deskripsi;
     private int drawableRes;
 
-    public Hewan(String jenis, String ras, String asal, String deskripsi, int drawableRes) {
+    public Galery(String jenis, String nama, String asal, String deskripsi, int drawableRes) {
         this.jenis = jenis;
-        this.ras = ras;
+        this.nama = nama;
         this.asal = asal;
         this.deskripsi = deskripsi;
         this.drawableRes = drawableRes;
@@ -23,20 +23,19 @@ public class Hewan {
         this.jenis = jenis;
     }
 
-    public String getRas() {
-        return ras;
+    public String getNama() {
+        return nama;
     }
 
-    public void setRas(String ras) {
-        this.ras = ras;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getAsal() {
         return asal;
     }
 
-    public void setAsal(String asal) {
-        this.asal = asal;
+    public void setAsal(String asal) { this.asal = asal;
     }
 
     public String getDeskripsi() {

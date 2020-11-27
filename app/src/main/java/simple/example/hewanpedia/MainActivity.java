@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton btnKucing,btnAnjing,btnAyam;
+    ImageButton btnPria,btnWanita;
     public static final String JENIS_GALERI_KEY = "JENIS_GALERI";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,18 +20,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void inisialisasiView() {
-        btnKucing = findViewById(R.id.btn_buka_ras_kucing);
-        btnAnjing = findViewById(R.id.btn_buka_ras_anjing);
-        btnAyam = findViewById(R.id.btn_buka_ras_ayam);
-        btnKucing.setOnClickListener(view -> bukaGaleri("Kucing"));
-        btnAnjing.setOnClickListener(view -> bukaGaleri("Anjing"));
-        btnAyam.setOnClickListener(view -> bukaGaleri("Ikan"));
+        btnPria = findViewById(R.id.btn_buka_buah_hijau);
+        btnWanita = findViewById(R.id.btn_buka_buah_kuning);
+        btnPria.setOnClickListener(view -> bukaGaleri("Buah Hijau"));
+        btnWanita.setOnClickListener(view -> bukaGaleri("Buah Kuning"));
     }
 
-    private void bukaGaleri(String jenisHewan) {
-        Log.d("MAIN","Buka activity kucing");
+    private void bukaGaleri(String jenisPakaian) {
+        Log.d("MAIN","Buka activity baju pria");
         Intent intent = new Intent(this, GaleriActivity.class);
-        intent.putExtra(JENIS_GALERI_KEY, jenisHewan);
+        intent.putExtra(JENIS_GALERI_KEY, jenisPakaian);
         startActivity(intent);
     }
 
